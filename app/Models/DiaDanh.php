@@ -13,9 +13,11 @@ class DiaDanh extends Model
       'TenDiaDanh',
       'ViTri',
       'MoTa',
+      'HinhAnh',
   ];
-  public function HinhAnhDiaDanh()
-  {
-      return $this->hasOne(HinhAnhDiaDanh::class, 'id','DiaDanhId');
-  }
+
+  public function Share()
+    {
+        return $this->hasMany(Share::class, 'DiaDanhId');
+    }
 }

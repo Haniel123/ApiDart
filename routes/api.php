@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('DiaDanh',[DiaDanhController::class,'LayDiaDanh']);
+Route::get('TaiKhoan',[DiaDanhController::class,'GetTaiKhoan']);
 
 Route::post('TimKiem',[DiaDanhController::class,'TimKiem']);
 

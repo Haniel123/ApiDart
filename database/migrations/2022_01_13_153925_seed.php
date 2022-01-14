@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\DiaDanh;
-class Datacreate extends Migration
+class Seed extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,15 @@ class Datacreate extends Migration
      */
     public function up()
     {
-      
+        for($i=0;$i<7;$i++)
+        {
+            $dd=new DiaDanh;
+            $dd->TenDiaDanh="Nhà Khánh";
+            $dd->ViTri="Nhà Khánh Nè";
+            $dd->MoTa=":>";
+            $dd->HinhAnh=$i;
+            $dd->save();
+        }
     }
 
     /**

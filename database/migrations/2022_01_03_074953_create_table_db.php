@@ -13,10 +13,12 @@ class CreateTableDb extends Migration
      */
     public function up()
     {
-        Schema::create('hinh_anh_dia_danh', function (Blueprint $table) {
+        Schema::create('dia_danhs', function (Blueprint $table) {
             $table->id();
-            $table->String('DiaDanhId');
-            $table->String('DuongDan');
+            $table->String('TenDiaDanh');
+            $table->String('ViTri');
+            $table->String('MoTa');
+            $table->String('HinhAnh');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -53,8 +55,6 @@ class CreateTableDb extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
-
-        
         Schema::create('DiaDiemLuuTru', function (Blueprint $table) {
             $table->id();
             $table->String('DiaDanhId');
@@ -62,6 +62,14 @@ class CreateTableDb extends Migration
             $table->String('DiaChi');
             $table->String('SDT');
             $table->String('Status');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+        Schema::create('ViTri', function (Blueprint $table) {
+            $table->id();
+            $table->String('DiaDanhId');
+            $table->String('KinhDo');
+            $table->String('ViDo');
             $table->timestamps();
             $table->softDeletes();
         });

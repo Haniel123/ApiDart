@@ -13,6 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+          for($i=0;$i<7;$i++)
+        {
+            $dd=new DiaDanh;
+            $dd->TenDiaDanh="Nhà Khánh";
+            $dd->ViTri="Nhà Khánh Nè";
+            $dd->MoTa=":>";
+            $dd->save();
+        }
     }
 }

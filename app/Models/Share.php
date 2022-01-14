@@ -7,11 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Share extends Model
 {
-    protected $table='share';
+    protected $table = 'share';
     use HasFactory;
-
-    public function layDiaDanhTheoId()
+    protected $fillable = [
+        'BaiViet',
+        'DanhGia',
+        'DiaDanhId',
+        'TaiKhoanId',
+        'Liked',
+        'Unliked',
+    ];
+    public function DiaDanh()
     {
-        return $this->belongsTo('App\Models\DiaDanh','DiaDanhId','id');
+        return $this->belongsTo(DiaDanh::class, 'DiaDanhId');
+    }
+    public function TaiKhoan()
+    {
+        return $this->belongsTo(TaiKhoan::class, 'TaiKhoanId');
     }
 }
